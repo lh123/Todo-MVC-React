@@ -1,0 +1,212 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+}
+
+#app {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.todo-app {
+    background-color: #fff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.todo-header {
+    position: relative;
+}
+
+.todo-header h1 {
+    display: block;
+    width: 100%;
+    font-size: 100px;
+    text-align: center;
+    color: rgba(175, 47, 47, 0.15);
+    margin: 0;
+}
+
+.todo-header .new-todo {
+    padding: 16px 16px 16px 60px;
+    border: none;
+    background: rgba(0, 0, 0, 0.03);
+    box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+    margin: 0;
+    width: 100%;
+    font-size: 24px;
+    outline: none;
+}
+
+.todo-header .toggle-all {
+    display: block;
+    position: absolute;    
+    height: 60px;
+    width: 40px;
+    line-height: 60px;
+    text-align: center;
+    left: 0px;
+    bottom: 0px;
+    font-size: 22px;
+    color: #e6e6e6;
+    transform: rotate(90deg);
+}
+
+.todo-header .toggle-all.active {
+    color: #737373;
+}
+
+.todo-list {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 24px;
+    border-bottom: 1px solid #ededed;
+}
+
+.todo-list li:last-child {
+    border-bottom: none;
+}
+
+.todo-list li .toggle {
+    display: none;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto 0;
+}
+
+.todo-list li.hover .toggle,
+.todo-list li.completed .toggle {
+    display: block;
+}
+
+.todo-list li label {
+    word-break: break-all;
+    padding: 15px 60px 15px 15px;
+    margin-left: 45px;
+    display: block;
+    transition: color .2s;
+}
+
+.todo-list li.completed label {
+    text-decoration: line-through;
+    color: #d9d9d9;
+}
+
+.todo-list li .destory {
+    display: none;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 10px;
+    margin: auto 0;
+    color: #cc9a9a;
+    cursor: default;
+    line-height: 40px;
+    font-weight: bold;
+    transition: color 0.5s;
+}
+
+.todo-list li.hover .destory {
+    display: block;
+}
+
+.todo-list li.hover .destory:hover {
+    color: #af5b5e;
+}
+
+.todo-list li .edit {
+    position: absolute;
+    display: none;
+    margin: 0;    
+    margin-left: 45px;
+    height: 100%;
+    width: calc(100% - 45px);
+    top: 0;
+    font-size: 24px;
+    outline: none;
+    padding: 15px;
+    border: 1px solid #999;
+    box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.todo-list li.editing .edit {
+    display: block;
+}
+
+.todo-app .footer {
+    position: relative;
+    color: #777;
+    padding: 10px 15px;
+    height: 40px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2),
+                0 8px 0 -3px #f6f6f6,
+                0 9px 1px -3px rgba(0, 0, 0, 0.2),
+                0 16px 0 -6px #f6f6f6,
+                0 17px 1px -6px rgba(0, 0, 0, 0.2);
+}
+
+.footer .todo-count {
+    float: left;
+}
+
+.footer .todo-count-num {
+    font-weight: bold;
+}
+
+.footer .todo-filter {
+    position: absolute;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer .todo-filter li {
+    display: inline-block;
+}
+
+.footer li a {
+    text-decoration: none;
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.footer li a.selected {
+    border: 1px solid rgba(175, 47, 47, 0.2);
+}
+
+.footer .clear-complete {
+    position: relative;
+    float: right;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    background-color: inherit;
+    line-height: 20px;
+    border: none;
+    font-size: inherit;
+    cursor: pointer;
+}
+
+.footer .clear-complete:hover {
+    text-decoration: underline;
+}
