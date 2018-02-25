@@ -1,15 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import TodoHeader from "./components/TodoHeader";
-import { default as TodoFooter, ShowType } from "./components/TodoFooter";
-import TodoList from "./components/TodoList";
+import { TodoHeader } from "./components/TodoHeader";
+import { TodoFooter, ShowType } from "./components/TodoFooter";
+import { TodoList } from "./components/TodoList";
 
 import { TodoManager, TodoObserver, Todo } from "./model/TodoManager";
 
 import * as Util from "./utils";
-
-import "./assets/css/global.css";
 
 type Props = {
     storeName: string;
@@ -31,7 +29,9 @@ class TodoApp extends React.PureComponent<Props, States> {
     }
 
     componentWillMount() {
-        this.handleUrlMatch(location.href);
+        if (typeof window !== "undefined") {
+            this.handleUrlMatch(location.href);
+        }
         this.mTodoManager.subscribe(this);
     }
 
@@ -159,9 +159,4 @@ class TodoApp extends React.PureComponent<Props, States> {
     }
 }
 
-function render() {
-    ReactDOM.render(<TodoApp storeName="todo" />, document.getElementById("app"));
-}
-
-render();
-
+export { TodoApp };

@@ -3,12 +3,12 @@ const path = require("path");
 
 module.exports = {
     entry: {
-        bundle: "./src/index.tsx",
+        bundle: "./src/client-entry.tsx",
         vender: ["react", "react-dom"]
     },
     output: {
         filename: "[name].js",
-        path: __dirname + "/dist/assets",
+        path: __dirname + "/dist/client/assets",
         publicPath: "assets/"
     },
     devServer: {
@@ -25,7 +25,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ["style-loader", "css-loader"]
+                use: ["simple-universal-style-loader", "css-loader"]
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,

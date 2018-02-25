@@ -2,17 +2,18 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+    target: "node",
     entry: {
-        bundle: "./src/client-entry.tsx",
-        vender: ["react", "react-dom"]
+        bundle: "./src/server-entry.tsx"
     },
     output: {
         filename: "[name].js",
-        path: __dirname + "/dist/client/assets",
-        publicPath: "assets/"
+        path: __dirname + "/dist/ssr/assets",
+        publicPath: "assets/",
+        libraryTarget: "commonjs2"
     },
     devServer: {
-        contentBase: "./dist/client"
+        contentBase: "./dist"
     },
     devtool: "source-map",
     resolve: {
@@ -33,10 +34,5 @@ module.exports = {
                 use: "url-loader?name=imgs/[name].[ext]"
             }
         ]
-    },
-    plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vender"
-        })
-    ]
+    }
 }

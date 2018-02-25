@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config webpack.prod.config.js",
-    "dev": "webpack-dev-server --config webpack.dev.config.js"
+    "build:client": "webpack --config webpack.prod.config.js",
+    "build:client-dev": "webpack --config webpack.dev.config.js",
+    "build:ssr": "webpack --config webpack.ssr.config.js",
+    "dev": "webpack-dev-server --config webpack.dev.config.js",
+    "dev-ssr": "npm run build:ssr&&npm run build:client-dev&&node server/app.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,13 +21,12 @@
     "@types/react": "^16.0.38",
     "@types/react-dom": "^16.0.4",
     "@types/webpack": "^3.8.8",
-    "css-loader": "^0.28.9",
     "file-loader": "1.1.7",
     "source-map-loader": "^0.2.3",
-    "style-loader": "^0.20.2",
     "ts-loader": "^3.5.0",
     "typescript": "^2.7.2",
     "url-loader": "^0.6.2",
+    "vue-style-loader": "^4.0.2",
     "webpack": "^3.11.0",
     "webpack-dev-server": "^2.11.1"
   }

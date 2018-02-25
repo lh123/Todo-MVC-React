@@ -112,4 +112,4 @@ class TodoItem extends React.PureComponent<Props, States> {
     }
 }
 
-export default TodoItem;
+export { TodoItem };

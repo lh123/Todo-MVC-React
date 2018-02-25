@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export type ShowType = "All" | "Active" | "Completed";
+type ShowType = "All" | "Active" | "Completed";
 
 type Props = {
     count: number;
@@ -56,4 +56,4 @@ class TodoFooter extends React.Component<Props, object>{
     }
 }
 
-export default TodoFooter;
+export { TodoFooter, ShowType };

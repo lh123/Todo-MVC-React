@@ -12,7 +12,7 @@ interface Props {
     onToggleAllClick: (checked: boolean) => void;
 }
 
-class TodoHeader extends React.Component<Props, object>{
+class TodoHeader extends React.PureComponent<Props, object>{
     constructor(props: Props) {
         super(props);
     }
@@ -61,4 +61,4 @@ class TodoHeader extends React.Component<Props, object>{
     }
 }
 
-export default TodoHeader;
+export { TodoHeader };

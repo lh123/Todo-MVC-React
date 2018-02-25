@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import TodoItem from "./TodoItem";
+import { TodoItem } from "./TodoItem";
 import { Todo } from "../model/TodoManager";
 
 type Props = {
@@ -54,4 +54,4 @@ class TodoList extends React.PureComponent<Props, States>{
     }
 }
 
-export default TodoList;
+export { TodoList };

@@ -19,9 +19,11 @@ class TodoManager {
 
     constructor(key: string) {
         this.mKey = key;
-        let readTodo = LocalStorage.read<Todo[]>(this.mKey);
-        if (readTodo !== null) {
-            this.mTodos = [...this.mTodos, ...readTodo];
+        if (typeof window !== "undefined") {
+            let readTodo = LocalStorage.read<Todo[]>(this.mKey);
+            if (readTodo !== null) {
+                this.mTodos = [...this.mTodos, ...readTodo];
+            }
         }
     }
 
