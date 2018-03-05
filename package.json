@@ -20,7 +20,7 @@
     "@types/react-dom": "^16.0.4",
     "@types/webpack": "^3.8.8",
     "css-loader": "^0.28.9",
-    "file-loader": "1.1.7",
+    "file-loader": "^1.1.11",
     "source-map-loader": "^0.2.3",
     "style-loader": "^0.20.2",
     "ts-loader": "^3.5.0",
